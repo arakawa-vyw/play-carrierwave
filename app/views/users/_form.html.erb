@@ -16,8 +16,13 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= image_tag @user.avatar_url %>
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :confirm %><br>
+    <%= f.check_box :confirm %>
   </div>
   <div class="actions">
     <%= f.submit %>
