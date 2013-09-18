@@ -1,3 +1,5 @@
+Input
+<div style="border: 1px solid #000000">
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -22,10 +24,40 @@
     <%= f.hidden_field :avatar_cache %>
   </div>
   <div class="field">
-    <%= f.label :confirm %><br>
+    <%= f.label :confirm, "validationエラー装置(on:success/off:fail)" %><br>
     <%= f.check_box :confirm %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
+</div>
+
+Check
+<div style="border: 1px solid #000000">
+<%= form_for :user, url: { action: :check_avatar }, remote: true, html: { multipart: true, id: :check_avatar } do |f| %>
+  <div class="field">
+    <%= image_tag @user.avatar_url %>
+    <%= f.label :avatar, "check avatar(Ajax)" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit "check avatar!" %>
+  </div>
+<% end %>
+
+<p>
+<%= link_to "check avatar!(submit)", "#", onclick: "$('#check_avatar').submit();" %>
+</p>
+<p>
+<%= link_to "check avatar!(submit.rails)", "#", id: "link_to_check_avatar" %>
+</p>
+</div>
+
+<%= javascript_tag do %>
+$(function(){
+  $('#link_to_check_avatar').click(function(){
+    $('#check_avatar').trigger("submit.rails");
+  });
+});
 <% end %>

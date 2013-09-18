@@ -61,6 +61,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def check_avatar
+    @user = User.new(params.require(:user).permit(:avatar))
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

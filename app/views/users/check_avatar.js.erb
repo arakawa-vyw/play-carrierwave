@@ -1,0 +1,10 @@
+// $.colorbox({
+//   html: "<%= j(image_tag @user.avatar_url) %>",
+//   width: "50%",
+//   height: "50%"
+// });
+$.colorbox({
+  photo: true,
+  href: "<%= @user.avatar_url %>"
+});
+
