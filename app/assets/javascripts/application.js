@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.colorbox-min
+//= require jquery.remotipart
+//= require jquery.colorbox
 //= require_tree .
