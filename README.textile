@@ -1,2 +1,39 @@
-play-carrierwave
-================
+h2. CarrierWaveの簡単なサンプル
+
+* キャッシュファイルの表示
+* Ajaxでの画像アップロード
+* ImageMagickは未使用
+
+scaffoldに手を加えただけです。
+
+h2. System dependencies
+
+* ruby 2.0(>=1.9.2)
+* mysql
+
+h2. Gems
+
+* rails 4.0.0
+* carrierwave
+* jquery-rails
+use jquery/jquery_ujs
+* remotipart
+use jquery.remotipart
+
+Ajaxでファイルアップロードをするために上記gemから提供されるjqueryを使用します。
+* jquery
+* jquery_ujs
+* jquery.remotipart
+
+h2. Getting Started
+
+<pre>
+git clone https://github.com/arakawa-vyw/play-carrierwave.git
+</pre>
+<pre>
+bundle install --path vendor/bundle
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rails s
+</pre>
+
